@@ -1,0 +1,41 @@
+name: branch-rules
+
+on:
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  main-source:
+    if: github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier que la PR vient de dev ou hotfix/*
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          case "$HEAD_REF" in
+            dev|hotfix/*)
+              echo "OK : $HEAD_REF -> main"
+              ;;
+            *)
+              echo "Refusé : une PR vers main doit venir de dev ou hotfix/*. Branche source : $HEAD_REF"
+              exit 1
+              ;;
+          esac
+
+  dev-source:
+    if: github.base_ref == 'dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier le préfixe de la branche (avertissement seulement)
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          case "$HEAD_REF" in
+            feat/*|fix/*|perf/*|test/*|refactor/*|docs/*|hotfix/*)
+              echo "OK : $HEAD_REF -> dev"
+              ;;
+            *)
+              echo "::warning::Nom de branche sans préfixe reconnu : $HEAD_REF. Préfixes recommandés : feat/, fix/, perf/, test/, refactor/, docs/, hotfix/"
+              ;;
+          esac

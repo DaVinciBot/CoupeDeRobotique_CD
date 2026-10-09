@@ -1,0 +1,187 @@
+# =========================================================
+# Sécurité : secrets, clés, identifiants
+# =========================================================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.keystore
+*.jks
+id_rsa*
+id_ed25519*
+secrets.*
+*.secret
+credentials.json
+service-account*.json
+
+# =========================================================
+# Logs et fichiers temporaires
+# =========================================================
+*.log
+logs/
+log/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+tmp/
+temp/
+
+# =========================================================
+# Python
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+.python-version
+# Tests, couverture, typage, lint
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================================================
+# Node.js
+# =========================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/cache/
+.yarn/install-state.gz
+.pnpm-store/
+.next/
+.nuxt/
+.turbo/
+.cache/
+.parcel-cache/
+coverage/
+*.tsbuildinfo
+
+# =========================================================
+# C / C++ / CMake
+# =========================================================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.d
+*.gch
+*.pch
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile.local
+cmake-build-*/
+compile_commands.json
+.cache/clangd/
+
+# =========================================================
+# Embarqué / robotique
+# =========================================================
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+# Arduino
+*.elf
+*.hex
+*.bin
+*.map
+# ROS / colcon
+install/
+devel/
+
+# =========================================================
+# IDE et éditeurs
+# =========================================================
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+*.code-workspace
+.history/
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+# Vim / Emacs
+.*.sw?
+\#*\#
+.#*
+# Sublime Text
+*.sublime-workspace
+
+# =========================================================
+# Assistants IA
+# =========================================================
+# Claude Code
+.claude/settings.local.json
+CLAUDE.local.md
+# OpenAI Codex
+AGENTS.override.md
+# Google Gemini CLI
+.gemini/.env
+# Aider
+.aider*
+# Cursor
+.cursor/mcp.json
+
+# =========================================================
+# Système d'exploitation
+# =========================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+.directory
+.Trash-*
