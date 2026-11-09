@@ -1,0 +1,7 @@
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/remote_compute.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/astar_demo.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/test_detector.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/test_protocol.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/test.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/edit_cache.dir
+/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/rebuild_cache.dir

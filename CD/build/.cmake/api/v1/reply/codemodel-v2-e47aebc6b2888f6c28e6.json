@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "remote_compute",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "astar_demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-astar_demo-Debug-99f979fd60b32e2317e6.json",
+					"name" : "astar_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "remote_compute::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-remote_compute-Debug-fda577033c8b0c2d0c96.json",
+					"name" : "remote_compute",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_detector::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_detector-Debug-182b4572a17b0cf4a283.json",
+					"name" : "test_detector",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_protocol::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_protocol-Debug-5e30feea2c34aa26d963.json",
+					"name" : "test_protocol",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/maxve/remote_compute_v2/remote_compute/build",
+		"source" : "/home/maxve/remote_compute_v2/remote_compute"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

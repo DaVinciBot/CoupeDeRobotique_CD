@@ -1,0 +1,63 @@
+Start testing: Nov 07 11:39 CET
+----------------------------------------------------------
+1/2 Testing: test_detector
+1/2 Test: test_detector
+Command: "/home/maxve/remote_compute_v2/remote_compute/build/test_detector"
+Directory: /home/maxve/remote_compute_v2/remote_compute/build
+"test_detector" start time: Nov 07 11:39 CET
+Output:
+----------------------------------------------------------
+[testPositionAndYaw]
+[testPositionsAcrossArena]
+[testSeveralMarkersKeepTheirIds]
+[testReferencesAreNotReturned]
+[testWarmupFiltersFalsePositives]
+[testKaplaCarryForward]
+[testOccludedReferenceStaysUsable]
+[testNotEnoughReferences]
+[testPerspectiveCamera]
+[testNoiseBlurAndShadow]
+[testEmptyImage]
+
+test_detector : 217 vérifications, 0 échec(s)
+<end of output>
+Test time =   5.18 sec
+----------------------------------------------------------
+Test Passed.
+"test_detector" end time: Nov 07 11:39 CET
+"test_detector" time elapsed: 00:00:05
+----------------------------------------------------------
+
+2/2 Testing: test_protocol
+2/2 Test: test_protocol
+Command: "/home/maxve/remote_compute_v2/remote_compute/build/test_protocol"
+Directory: /home/maxve/remote_compute_v2/remote_compute/build
+"test_protocol" start time: Nov 07 11:39 CET
+Output:
+----------------------------------------------------------
+[net] pair ajouté : 192.168.1.20:5006
+[net] pair ajouté : 192.168.1.255:5006
+[net] écoute UDP sur le port 47123
+[net] pair ajouté : 127.0.0.1:43231
+[testVisionMessageFormat]
+[testVisionMessageLimits]
+[testVisionRoundTrip]
+[testVisionParserRejectsGarbage]
+[testDepotMessage]
+[testPamiRegistration]
+[testMatchLifecycle]
+[testDepotAssignments]
+[testDispatch]
+[testPeersAndSendWithoutSocket]
+[testRealUdpLoopback]
+
+test_protocol : 105 vérifications, 0 échec(s)
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"test_protocol" end time: Nov 07 11:39 CET
+"test_protocol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 07 11:39 CET

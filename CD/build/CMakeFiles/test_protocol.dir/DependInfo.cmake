@@ -1,0 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/tests/test_protocol.cpp" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

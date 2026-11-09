@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o -o astar_demo 

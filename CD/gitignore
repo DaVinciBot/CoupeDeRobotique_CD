@@ -1,0 +1,19 @@
+# Compilation
+build/
+cmake-build-*/
+*.o
+*.a
+*.so
+
+# Configuration locale (contient adresses IP et réglages propres à votre machine)
+# .env.example, lui, doit rester publié : c'est le modèle.
+.env
+
+# Calibration propre à une caméra donnée
+calibration.yml
+
+# Éditeurs / système
+.vscode/
+.idea/
+*.swp
+.DS_Store

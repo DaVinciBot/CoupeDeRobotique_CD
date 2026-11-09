@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/remote_compute.dir/src/main.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/main.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/main.cpp",
+  "output": "CMakeFiles/remote_compute.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp",
+  "output": "CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp",
+  "output": "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp",
+  "output": "CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp",
+  "output": "CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/examples/astar_demo.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/examples/astar_demo.cpp",
+  "output": "CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -I/home/maxve/remote_compute_v2/remote_compute/tests -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/test_detector.dir/tests/test_detector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp",
+  "output": "CMakeFiles/test_detector.dir/tests/test_detector.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -I/home/maxve/remote_compute_v2/remote_compute/tests -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp",
+  "output": "CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -I/home/maxve/remote_compute_v2/remote_compute/tests -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/tests/test_protocol.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/tests/test_protocol.cpp",
+  "output": "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -I/home/maxve/remote_compute_v2/remote_compute/tests -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp",
+  "output": "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o"
+},
+{
+  "directory": "/home/maxve/remote_compute_v2/remote_compute/build",
+  "command": "/usr/bin/g++  -I/home/maxve/remote_compute_v2/remote_compute/src -I/home/maxve/remote_compute_v2/remote_compute/tests -isystem /usr/local/include/opencv4 -g -std=gnu++17 -Wall -Wextra -o CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp",
+  "file": "/home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp",
+  "output": "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o"
+}
+]
