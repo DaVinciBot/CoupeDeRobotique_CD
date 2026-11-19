@@ -1,7 +1,7 @@
-// Point d'entrée : charge la config, choisit le mode (détection | calibration),
-// instancie les composants et fait tourner la boucle de traitement (PROCESS_FPS).
+// Point d'entrée : charge la config, instancie les composants (caméra ZED en USB, détecteur ArUco,
+// réseau) et fait tourner la boucle de traitement (PROCESS_FPS).
 //
-// Usage : remote_compute [--calibrate] [--env chemin/.env]
+// Usage : remote_compute [--env chemin/.env]
 // Clavier : taper une trame brute (ex. "1" ou "4|B") pour l'injecter comme message réseau entrant.
 #include <atomic>
 #include <chrono>
@@ -14,7 +14,7 @@
 #include <thread>
 
 #include "arena/ArenaElements.hpp"
-#include "camera/CSICamera.hpp"
+#include "camera/ZedCamera.hpp"
 #include "detector/ArucoDetector.hpp"
 #include "game/MatchState.hpp"
 #include "net/Protocol.hpp"
@@ -39,23 +39,19 @@ static void startKeyboardThread(net::WifiLink& link) {
 
 static camera::CameraConfig loadCameraConfig(const utils::Config& c) {
     camera::CameraConfig cc;
-    cc.sensorId = c.integer("CAM_SENSOR_ID", 0);
-    cc.sensorMode = c.integer("CAM_SENSOR_MODE", 0);
-    cc.width = c.integer("CAM_WIDTH", 1920);
-    cc.height = c.integer("CAM_HEIGHT", 1080);
-    cc.fps = c.integer("CAM_FPS", 15);
+    cc.device = c.integer("ZED_DEVICE", 0);
+    cc.height = c.integer("ZED_RES", 376);
+    cc.fps = c.integer("ZED_FPS", 30);
+    cc.useRight = c.str("ZED_SIDE", "left") == "right";
     cc.gray = c.boolean("CAM_GRAY", true);
-    cc.calibFile = c.str("CALIB_FILE", "calibration.yml");
     return cc;
 }
 
 int main(int argc, char** argv) {
-    bool calibMode = false;
     std::string envPath = ".env";
     for (int i = 1; i < argc; ++i) {
         std::string a = argv[i];
-        if (a == "--calibrate") calibMode = true;
-        else if (a == "--env" && i + 1 < argc) envPath = argv[++i];
+        if (a == "--env" && i + 1 < argc) envPath = argv[++i];
     }
 
     std::signal(SIGINT, onSignal);
@@ -66,23 +62,8 @@ int main(int argc, char** argv) {
         std::fprintf(stderr, "[main] %s introuvable, valeurs par défaut / environnement\n", envPath.c_str());
     utils::setDebugMode(cfg.boolean("DEBUG", false));
 
-    camera::CSICamera cam(loadCameraConfig(cfg));
+    camera::ZedCamera cam(loadCameraConfig(cfg));
     if (!cam.open()) return 1;
-
-    // ---------- Mode calibration ----------
-    if (calibMode) {
-        bool ok = cam.calibrate(cfg.integer("CALIB_BOARD_COLS", 9), cfg.integer("CALIB_BOARD_ROWS", 6),
-                                static_cast<float>(cfg.real("CALIB_SQUARE_M", 0.025)),
-                                cfg.integer("CALIB_VIEWS", 25), g_stop);
-        cam.release();
-        return ok ? 0 : 2;
-    }
-
-    // ---------- Mode détection ----------
-    if (cam.loadCalibration(cfg.str("CALIB_FILE", "calibration.yml")) && cam.initUndistortMaps())
-        std::fprintf(stderr, "[main] calibration chargée\n");
-    else
-        std::fprintf(stderr, "[main] pas de calibration : images non corrigées (lancer --calibrate)\n");
 
     arena::ArenaElements arenaEl = arena::makeArena();
 
@@ -130,12 +111,11 @@ int main(int argc, char** argv) {
     link.start();
     startKeyboardThread(link);
 
-    // Affichage optionnel de l'arène (GStreamer)
+    // Affichage local optionnel de l'arène (GStreamer)
     auto mode = utils::parseDisplayMode(cfg.str("DISPLAY_MODE", "none"));
     cv::VideoWriter writer = utils::makeDisplayWriter(
         mode, cv::Size(static_cast<int>(arenaEl.width * 300), static_cast<int>(arenaEl.height * 300)),
-        cfg.integer("PROCESS_FPS", 5), cfg.str("DISPLAY_UDP_HOST", "127.0.0.1"),
-        cfg.integer("DISPLAY_UDP_PORT", 5000));
+        cfg.integer("PROCESS_FPS", 5));
 
     const auto procPeriod = std::chrono::milliseconds(1000 / std::max(1, cfg.integer("PROCESS_FPS", 5)));
     const auto visionPeriod = std::chrono::milliseconds(cfg.integer("VISION_SEND_PERIOD_MS", 500));
@@ -144,15 +124,14 @@ int main(int argc, char** argv) {
     auto lastVision = Clock::now(), lastDepot = Clock::now(), lastStats = Clock::now();
     auto nextProc = Clock::now();
     uint64_t frameId = 0;
-    cv::Mat frame, corrected;
+    cv::Mat frame;
 
     while (!g_stop) {
         std::this_thread::sleep_until(nextProc);
         nextProc = Clock::now() + procPeriod;
 
         if (!cam.readFrame(frame, frameId, 500)) continue;
-        cam.undistortFrame(frame, corrected);
-        auto dets = det.analyzeFrame(corrected);
+        auto dets = det.analyzeFrame(frame);
         auto now = Clock::now();
 
         // Vision -> robot (cmd 5)

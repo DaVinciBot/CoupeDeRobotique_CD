@@ -29,7 +29,7 @@ if(BUILD_REMOTE_COMPUTE)
 
   add_executable(remote_compute
     src/main.cpp
-    src/camera/CSICamera.cpp
+    src/camera/ZedCamera.cpp
     src/detector/ArucoDetector.cpp
     src/game/MatchState.cpp
     src/net/WifiLink.cpp

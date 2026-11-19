@@ -1,6 +1,6 @@
 # remote_compute (C++17)
 
-Calcul déporté pour robots : vision ArUco (caméra CSI IMX219), projection dans le repère de l'arène,
+Calcul déporté pour robots : vision ArUco (caméra **ZED en USB**, un seul capteur), projection dans le repère de l'arène,
 coordination des PAMIs et communication réseau **UDP sur Wi-Fi 6E** (ou tout autre lien IP).
 Portage C++ de la version Python ;
 
@@ -10,8 +10,8 @@ Portage C++ de la version Python ;
 CMakeLists.txt
 .env.example            -> copier en .env
 src/
-  main.cpp              orchestrateur (modes détection / --calibrate)
-  camera/CSICamera      capture GStreamer (nvargus) threadée, undistortion, calibration damier
+  main.cpp              orchestrateur (boucle de détection)
+  camera/ZedCamera      capture ZED en USB (UVC/V4L2) threadée, un seul capteur (gauche par défaut)
   detector/ArucoDetector  détection, homographie/affine, warm-up, carry-forward, rendu 2D
   arena/ArenaElements   géométrie de l'arène (header-only, valeurs placeholder)
   game/MatchState       cycle de match, enregistrement PAMIs, assignations (cmd 3)
@@ -48,8 +48,7 @@ make -j4
 ctest --output-on-failure              # tests automatiques
 cd ..
 cp .env.example .env
-./build/remote_compute --calibrate     # une fois : génère calibration.yml
-./build/remote_compute                 # détection
+./build/remote_compute                 # détection (ZED : ZED_DEVICE, ZED_RES=376, ZED_FPS=30 dans .env)
 ```
 
 Clavier en mode détection : taper une trame brute (`1`, `4|B`, `4|Y`) pour simuler un message entrant.
@@ -61,11 +60,11 @@ Clavier en mode détection : taper une trame brute (`1`, `4|B`, `4|Y`) pour simu
 2. Mode performance : `sudo nvpmodel -m 0 && sudo jetson_clocks`.
 3. `bash tools/install_opencv_jetson_nano.sh` (dans `tmux`, car c'est long). Le script crée 4 Go de swap
    et compile OpenCV 4.8 sans CUDA ; `WITH_CUDA=1` ajoute les modules CUDA (~6 à 8 h).
-4. Build comme ci-dessus. Dans `.env`, `CAM_SENSOR_MODE` doit correspondre à `CAM_WIDTH`x`CAM_HEIGHT`
-   (2 = 1920x1080 pour l'IMX219).
+4. Brancher la ZED sur un port **USB 3** (bleu), vérifier son numéro avec `ls /dev/video*` et le reporter
+   dans `ZED_DEVICE`. Build comme ci-dessus.
 
-L'affichage UDP utilise l'encodeur matériel `nvv4l2h264enc` quand il existe (Jetson Nano), sinon
-`x264enc` (Orin Nano, qui n'a pas d'encodeur vidéo matériel) : rien à changer entre les deux cartes.
+`DISPLAY_MODE=local` affiche le rendu 2D de l'arène sur l'écran branché à la Jetson (pas d'affichage à
+distance pour l'instant).
 
 ## Réseau Wi-Fi (UDP)
 
@@ -165,7 +164,7 @@ Ce code est une base de travail, **pas une version prête pour un match**.
 
 ### Non validé sur le matériel réel
 
-- Caméra CSI IMX219 : pipeline GStreamer et calibration par damier jamais exécutés sur une Jetson.
+- Programme principal avec la ZED sur la Jetson Nano (seul `test_zed_camera` a été essayé avec la caméra).
 - Détection ArUco sur de vraies images : testée uniquement sur des images synthétiques (sans distorsion
   d'objectif, éclairage réel ni flou de mouvement). Les paramètres de détection, volontairement très
   permissifs, sont à régler.
@@ -180,8 +179,12 @@ Ce code est une base de travail, **pas une version prête pour un match**.
 - **Assignation des PAMIs** : simple répartition à tour de rôle des zones de dépôt de l'équipe.
 - **A\*** (`src/planning/AStar.hpp`) : fonctionne et est testé via la démo, mais n'est pas branché sur
   les détections (il reste à construire la grille d'occupation à partir des marqueurs).
-- **Source d'images alternative** (webcam, fichier vidéo) : absente. Le programme principal exige la
-  caméra CSI d'une Jetson ; seuls les tests et la démo A\* tournent sans matériel.
+- **Calibration de la caméra** : retirée pour l'instant. Les images ne sont pas corrigées de la
+  distorsion de l'objectif, ce qui fausse un peu les positions sur les bords de l'image.
+- **Caméra CSI** : retirée pour l'instant, seule la ZED en USB est gérée.
+- **Affichage à distance (UDP)** : retiré pour l'instant ; seul l'affichage local reste disponible.
+- **Source d'images alternative** (fichier vidéo) : absente ; seuls les tests et la démo A\* tournent
+  sans caméra.
 - **Géométrie de l'arène en dur** dans le code, pas dans un fichier de configuration.
 
 ### Limites techniques connues

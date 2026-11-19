@@ -215,29 +215,29 @@ examples/astar_demo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar_demo.dir/build.make CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.s
 .PHONY : examples/astar_demo.cpp.s
 
-src/camera/CSICamera.o: src/camera/CSICamera.cpp.o
-.PHONY : src/camera/CSICamera.o
+src/camera/ZedCamera.o: src/camera/ZedCamera.cpp.o
+.PHONY : src/camera/ZedCamera.o
 
 # target to build an object file
-src/camera/CSICamera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o
-.PHONY : src/camera/CSICamera.cpp.o
+src/camera/ZedCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o
+.PHONY : src/camera/ZedCamera.cpp.o
 
-src/camera/CSICamera.i: src/camera/CSICamera.cpp.i
-.PHONY : src/camera/CSICamera.i
+src/camera/ZedCamera.i: src/camera/ZedCamera.cpp.i
+.PHONY : src/camera/ZedCamera.i
 
 # target to preprocess a source file
-src/camera/CSICamera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i
-.PHONY : src/camera/CSICamera.cpp.i
+src/camera/ZedCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.i
+.PHONY : src/camera/ZedCamera.cpp.i
 
-src/camera/CSICamera.s: src/camera/CSICamera.cpp.s
-.PHONY : src/camera/CSICamera.s
+src/camera/ZedCamera.s: src/camera/ZedCamera.cpp.s
+.PHONY : src/camera/ZedCamera.s
 
 # target to generate assembly for a file
-src/camera/CSICamera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s
-.PHONY : src/camera/CSICamera.cpp.s
+src/camera/ZedCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/remote_compute.dir/build.make CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.s
+.PHONY : src/camera/ZedCamera.cpp.s
 
 src/detector/ArucoDetector.o: src/detector/ArucoDetector.cpp.o
 .PHONY : src/detector/ArucoDetector.o
@@ -433,9 +433,9 @@ help:
 	@echo "... examples/astar_demo.o"
 	@echo "... examples/astar_demo.i"
 	@echo "... examples/astar_demo.s"
-	@echo "... src/camera/CSICamera.o"
-	@echo "... src/camera/CSICamera.i"
-	@echo "... src/camera/CSICamera.s"
+	@echo "... src/camera/ZedCamera.o"
+	@echo "... src/camera/ZedCamera.i"
+	@echo "... src/camera/ZedCamera.s"
 	@echo "... src/detector/ArucoDetector.o"
 	@echo "... src/detector/ArucoDetector.i"
 	@echo "... src/detector/ArucoDetector.s"

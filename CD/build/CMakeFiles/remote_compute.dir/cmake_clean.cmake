@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o"
-  "CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o.d"
+  "CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o"
+  "CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o.d"
   "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o"
   "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o.d"
   "CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o"

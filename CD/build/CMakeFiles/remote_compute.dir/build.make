@@ -83,19 +83,19 @@ CMakeFiles/remote_compute.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp -o CMakeFiles/remote_compute.dir/src/main.cpp.s
 
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -MF CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o.d -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp
+CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o: CMakeFiles/remote_compute.dir/flags.make
+CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/ZedCamera.cpp
+CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o -MF CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o.d -o CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/ZedCamera.cpp
 
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp > CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i
+CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/ZedCamera.cpp > CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.i
 
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s
+CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/ZedCamera.cpp -o CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.s
 
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: CMakeFiles/remote_compute.dir/flags.make
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp
@@ -142,7 +142,7 @@ CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.s: cmake_force
 # Object files for target remote_compute
 remote_compute_OBJECTS = \
 "CMakeFiles/remote_compute.dir/src/main.cpp.o" \
-"CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o" \
+"CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o" \
 "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o" \
 "CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o" \
 "CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o"
@@ -151,7 +151,7 @@ remote_compute_OBJECTS = \
 remote_compute_EXTERNAL_OBJECTS =
 
 remote_compute: CMakeFiles/remote_compute.dir/src/main.cpp.o
-remote_compute: CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o
+remote_compute: CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o
 remote_compute: CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o
 remote_compute: CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o
 remote_compute: CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp" "CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o" "gcc" "CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/CD/src/camera/ZedCamera.cpp" "CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o" "gcc" "CMakeFiles/remote_compute.dir/src/camera/ZedCamera.cpp.o.d"
   "/home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp" "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o" "gcc" "CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o.d"
   "/home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp" "CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o" "gcc" "CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o.d"
   "/home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp" "CMakeFiles/remote_compute.dir/src/main.cpp.o" "gcc" "CMakeFiles/remote_compute.dir/src/main.cpp.o.d"

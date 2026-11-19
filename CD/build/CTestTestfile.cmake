@@ -5,6 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test(test_detector "/home/maxve/remote_compute_v2/remote_compute/CD/build/test_detector")
-set_tests_properties(test_detector PROPERTIES  _BACKTRACE_TRIPLES "/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;47;add_test;/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;0;")
+set_tests_properties(test_detector PROPERTIES  _BACKTRACE_TRIPLES "/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;57;add_test;/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;0;")
 add_test(test_protocol "/home/maxve/remote_compute_v2/remote_compute/CD/build/test_protocol")
-set_tests_properties(test_protocol PROPERTIES  _BACKTRACE_TRIPLES "/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;47;add_test;/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;0;")
+set_tests_properties(test_protocol PROPERTIES  _BACKTRACE_TRIPLES "/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;57;add_test;/home/maxve/remote_compute_v2/remote_compute/CD/CMakeLists.txt;0;")

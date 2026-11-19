@@ -37,6 +37,8 @@
 #include <opencv2/objdetect/aruco_detector.hpp>
 #include <opencv2/videoio.hpp>
 
+#include "camera/ZedCamera.hpp"
+
 namespace {
 
 // ================================ RÉGLAGES RAPIDES ================================
@@ -58,17 +60,6 @@ struct Options {
     bool display = true;
 };
 
-// Modes vidéo de la ZED en UVC : largeur totale = 2 x largeur d'un capteur.
-int sensorWidthFor(int height) {
-    switch (height) {
-        case 376: return 672;
-        case 720: return 1280;
-        case 1080: return 1920;
-        case 1242: return 2208;  // "2K"
-        default: return -1;
-    }
-}
-
 void usage(const char* prog) {
     std::printf("Usage : %s [--device N] [--res 376|720|1080|2k] [--fps N] [--aruco|--no-aruco] "
                 "[--left|--right] [--no-display]\n",
@@ -88,7 +79,7 @@ bool parseArgs(int argc, char** argv, Options& o) {
             if (!v) return false;
             const std::string s = v;
             o.height = (s == "2k" || s == "2K") ? 1242 : std::atoi(v);
-            if (sensorWidthFor(o.height) < 0) return false;
+            if (camera::zedSensorWidth(o.height) < 0) return false;
         } else if (a == "--fps") {
             const char* v = next();
             if (!v) return false;
@@ -174,7 +165,7 @@ int main(int argc, char** argv) {
                      opt.device);
         return 1;
     }
-    const int sensorW = sensorWidthFor(opt.height);
+    const int sensorW = camera::zedSensorWidth(opt.height);
     cap.set(cv::CAP_PROP_FRAME_WIDTH, 2 * sensorW);
     cap.set(cv::CAP_PROP_FRAME_HEIGHT, opt.height);
     cap.set(cv::CAP_PROP_FPS, opt.fps);
