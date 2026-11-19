@@ -26,23 +26,46 @@ tests/                  tests automatiques (détecteur sur images synthétiques,
 
 ## Prérequis (Jetson / Linux)
 
-- g++ >= 9, CMake >= 3.16
+- g++ >= 7, CMake >= 3.10 (versions d'Ubuntu 18.04 / JetPack 4.6)
 - **OpenCV >= 4.7** avec **GStreamer** et le module `objdetect` (API `cv::aruco::ArucoDetector`).
-  Vérifier avec `cv::getBuildInformation()`. Si OpenCV est trop ancien : le recompiler
-  (`-DWITH_GSTREAMER=ON`, + `-DWITH_CUDA=ON` pour un CLAHE CUDA).
+  Vérifier avec `cv::getBuildInformation()`. CMake s'arrête avec un message explicite si OpenCV est trop ancien.
 - Un lien IP entre la Jetson et les robots (Wi-Fi 6E, Wi-Fi 5, Ethernet...).
+
+| Carte | JetPack / Ubuntu | OpenCV fourni | À faire |
+|---|---|---|---|
+| **Jetson Nano P3450** | 4.6.x / 18.04 | 4.1.1, sans ArUco | `tools/install_opencv_jetson_nano.sh` (OpenCV 4.8 dans `/usr/local`, ~2 à 3 h) |
+| **Jetson Orin (Nano, NX...)** | 6.x / 22.04 | 4.8 avec GStreamer | rien |
 
 ## Build & lancement
 
+Forme compatible avec le CMake 3.10 de la Jetson Nano (`cmake -S . -B build` et `ctest --test-dir`
+n'existent qu'à partir de CMake 3.13 et 3.20) :
+
 ```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j4
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j4
+ctest --output-on-failure              # tests automatiques
+cd ..
 cp .env.example .env
 ./build/remote_compute --calibrate     # une fois : génère calibration.yml
 ./build/remote_compute                 # détection
 ```
 
 Clavier en mode détection : taper une trame brute (`1`, `4|B`, `4|Y`) pour simuler un message entrant.
+
+### Jetson Nano P3450 : première installation
+
+1. Connexion au PC : câble **micro-USB de données**, puis `ssh <utilisateur>@192.168.55.1`. Alimentation
+   conseillée : jack 5 V 4 A avec le cavalier **J48**. Un câble Ethernet donne l'accès Internet nécessaire à `apt`.
+2. Mode performance : `sudo nvpmodel -m 0 && sudo jetson_clocks`.
+3. `bash tools/install_opencv_jetson_nano.sh` (dans `tmux`, car c'est long). Le script crée 4 Go de swap
+   et compile OpenCV 4.8 sans CUDA ; `WITH_CUDA=1` ajoute les modules CUDA (~6 à 8 h).
+4. Build comme ci-dessus. Dans `.env`, `CAM_SENSOR_MODE` doit correspondre à `CAM_WIDTH`x`CAM_HEIGHT`
+   (2 = 1920x1080 pour l'IMX219).
+
+L'affichage UDP utilise l'encodeur matériel `nvv4l2h264enc` quand il existe (Jetson Nano), sinon
+`x264enc` (Orin Nano, qui n'a pas d'encodeur vidéo matériel) : rien à changer entre les deux cartes.
 
 ## Réseau Wi-Fi (UDP)
 
@@ -92,14 +115,14 @@ g++ -std=c++17 -O2 -Isrc examples/astar_demo.cpp -o astar_demo
 ./astar_demo --map ma_carte.txt   # votre carte : '#' obstacle, 'S' départ, 'G' arrivée
 ```
 
-Pour ne compiler que la démo avec CMake : `cmake -S . -B build -DBUILD_REMOTE_COMPUTE=OFF`.
+Pour ne compiler que la démo avec CMake : `cd build && cmake .. -DBUILD_REMOTE_COMPUTE=OFF && make`.
 La bibliothèque `src/planning/AStar.hpp` est réutilisable telle quelle : il suffit de remplir une `Grid`
 (par exemple 1 case = 5 cm, kaplas et robots détectés = cases bloquées) et d'appeler `planning::findPath`.
 
 ## Tests
 
 ```bash
-cmake --build build && ctest --test-dir build --output-on-failure
+cd build && make -j4 && ctest --output-on-failure
 ```
 
 - `test_detector` : détection ArUco sur images synthétiques (position, orientation, filtre anti-fausses
@@ -115,7 +138,7 @@ capteur de la ZED (gauche par défaut). En USB, la ZED est une webcam UVC qui re
 côte à côte ; le SDK ZED n'est pas nécessaire.
 
 ```bash
-./build/test_zed_camera                  # /dev/video0, 1280x720
+./build/test_zed_camera                  # /dev/video0, 672x376 @ 30 i/s (meilleur réglage mesuré)
 ./build/test_zed_camera --device 2 --res 1080 --right
 ./build/test_zed_camera --no-aruco       # sans détection ArUco
 ```
@@ -159,8 +182,6 @@ Ce code est une base de travail, **pas une version prête pour un match**.
   les détections (il reste à construire la grille d'occupation à partir des marqueurs).
 - **Source d'images alternative** (webcam, fichier vidéo) : absente. Le programme principal exige la
   caméra CSI d'une Jetson ; seuls les tests et la démo A\* tournent sans matériel.
-- **Affichage UDP** : encodeur logiciel `x264enc` ; l'encodeur matériel Jetson (`nvv4l2h264enc`) n'est
-  pas utilisé.
 - **Géométrie de l'arène en dur** dans le code, pas dans un fichier de configuration.
 
 ### Limites techniques connues

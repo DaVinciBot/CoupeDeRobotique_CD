@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.16)
+# 3.10 = version fournie par Ubuntu 18.04 (JetPack 4.6, Jetson Nano P3450).
+cmake_minimum_required(VERSION 3.10)
 project(remote_compute LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -9,12 +10,21 @@ endif()
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 # Mettre OFF pour ne compiler que la démo A* (aucune dépendance) :
-#   cmake -S . -B build -DBUILD_REMOTE_COMPUTE=OFF
+#   mkdir build && cd build && cmake .. -DBUILD_REMOTE_COMPUTE=OFF
 option(BUILD_REMOTE_COMPUTE "Compiler le programme principal (OpenCV requis)" ON)
 
 if(BUILD_REMOTE_COMPUTE)
-  # OpenCV >= 4.7 compilé avec GStreamer (vérifier : cv::getBuildInformation())
-  find_package(OpenCV REQUIRED)
+  # OpenCV >= 4.7 compilé avec GStreamer (vérifier : cv::getBuildInformation()).
+  # La version minimale fait ignorer l'OpenCV 4.1.1 de JetPack 4.6 (sans ArUco) au profit de celui
+  # installé dans /usr/local par tools/install_opencv_jetson_nano.sh.
+  find_package(OpenCV 4.7 QUIET)
+  if(NOT OpenCV_FOUND)
+    message(FATAL_ERROR
+      "OpenCV >= 4.7 introuvable (API cv::aruco::ArucoDetector requise).\n"
+      "Sur Jetson Nano (JetPack 4.6, OpenCV 4.1.1) : lancer tools/install_opencv_jetson_nano.sh, "
+      "ou indiquer un autre OpenCV avec -DOpenCV_DIR=<prefix>/lib/cmake/opencv4.")
+  endif()
+  message(STATUS "OpenCV ${OpenCV_VERSION} : ${OpenCV_DIR}")
   find_package(Threads REQUIRED)
 
   add_executable(remote_compute

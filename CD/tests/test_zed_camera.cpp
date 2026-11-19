@@ -11,7 +11,7 @@
 // marqueur apparaît, un message est affiché dans le terminal et les marqueurs sont dessinés à l'écran.
 //
 // Ce test n'est PAS lancé par ctest (il faut le matériel). Lancement :
-//   ./build/test_zed_camera                    # /dev/video0, 1280x720 par capteur, ArUco selon le défaut
+//   ./build/test_zed_camera                    # /dev/video0, 672x376 @ 30 i/s par capteur (réglage conseillé), ArUco selon le défaut
 //   ./build/test_zed_camera --device 2         # autre périphérique
 //   ./build/test_zed_camera --aruco            # force la détection ArUco
 //   ./build/test_zed_camera --no-aruco         # désactive la détection ArUco
@@ -51,7 +51,7 @@ constexpr double LOST_AFTER_S = 1.0;
 
 struct Options {
     int device = 0;
-    int height = 720;  // hauteur d'UN capteur
+    int height = 376;  // hauteur d'UN capteur (376 = meilleur compromis mesuré : 672x376 @ 30 i/s)
     int fps = 30;
     bool aruco = ENABLE_ARUCO_CHECK;
     bool useRight = false;
