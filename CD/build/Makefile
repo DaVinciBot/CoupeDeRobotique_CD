@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute
+CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute/CD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/build
+CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/CD/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles /home/maxve/remote_compute_v2/remote_compute/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles /home/maxve/remote_compute_v2/remote_compute/CD/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +177,19 @@ test_protocol: cmake_check_build_system
 test_protocol/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_protocol.dir/build.make CMakeFiles/test_protocol.dir/build
 .PHONY : test_protocol/fast
+
+#=============================================================================
+# Target rules for targets named test_zed_camera
+
+# Build rule for target.
+test_zed_camera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_zed_camera
+.PHONY : test_zed_camera
+
+# fast build rule for target.
+test_zed_camera/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_zed_camera.dir/build.make CMakeFiles/test_zed_camera.dir/build
+.PHONY : test_zed_camera/fast
 
 examples/astar_demo.o: examples/astar_demo.cpp.o
 .PHONY : examples/astar_demo.o
@@ -379,6 +392,30 @@ tests/test_protocol.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_protocol.dir/build.make CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.s
 .PHONY : tests/test_protocol.cpp.s
 
+tests/test_zed_camera.o: tests/test_zed_camera.cpp.o
+.PHONY : tests/test_zed_camera.o
+
+# target to build an object file
+tests/test_zed_camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_zed_camera.dir/build.make CMakeFiles/test_zed_camera.dir/tests/test_zed_camera.cpp.o
+.PHONY : tests/test_zed_camera.cpp.o
+
+tests/test_zed_camera.i: tests/test_zed_camera.cpp.i
+.PHONY : tests/test_zed_camera.i
+
+# target to preprocess a source file
+tests/test_zed_camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_zed_camera.dir/build.make CMakeFiles/test_zed_camera.dir/tests/test_zed_camera.cpp.i
+.PHONY : tests/test_zed_camera.cpp.i
+
+tests/test_zed_camera.s: tests/test_zed_camera.cpp.s
+.PHONY : tests/test_zed_camera.s
+
+# target to generate assembly for a file
+tests/test_zed_camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_zed_camera.dir/build.make CMakeFiles/test_zed_camera.dir/tests/test_zed_camera.cpp.s
+.PHONY : tests/test_zed_camera.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -392,6 +429,7 @@ help:
 	@echo "... remote_compute"
 	@echo "... test_detector"
 	@echo "... test_protocol"
+	@echo "... test_zed_camera"
 	@echo "... examples/astar_demo.o"
 	@echo "... examples/astar_demo.i"
 	@echo "... examples/astar_demo.s"
@@ -416,6 +454,9 @@ help:
 	@echo "... tests/test_protocol.o"
 	@echo "... tests/test_protocol.i"
 	@echo "... tests/test_protocol.s"
+	@echo "... tests/test_zed_camera.o"
+	@echo "... tests/test_zed_camera.i"
+	@echo "... tests/test_zed_camera.s"
 .PHONY : help
 
 

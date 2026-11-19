@@ -46,4 +46,10 @@ if(BUILD_REMOTE_COMPUTE)
     target_compile_options(${t} PRIVATE -Wall -Wextra)
     add_test(NAME ${t} COMMAND ${t})
   endforeach()
+
+  # Test MANUEL de la caméra ZED en USB (matériel + écran requis) : compilé mais pas lancé par ctest.
+  add_executable(test_zed_camera tests/test_zed_camera.cpp)
+  target_include_directories(test_zed_camera PRIVATE src tests ${OpenCV_INCLUDE_DIRS})
+  target_link_libraries(test_zed_camera PRIVATE ${OpenCV_LIBS})
+  target_compile_options(test_zed_camera PRIVATE -Wall -Wextra)
 endif()

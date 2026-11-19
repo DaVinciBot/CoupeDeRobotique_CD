@@ -108,6 +108,26 @@ cmake --build build && ctest --test-dir build --output-on-failure
 
 Ils ne nécessitent ni caméra ni Jetson, mais **ne remplacent pas un essai sur le matériel réel**.
 
+### Test manuel de la caméra ZED (USB)
+
+`test_zed_camera` (compilé avec le reste, mais pas lancé par `ctest`) affiche le flux d'**un seul**
+capteur de la ZED (gauche par défaut). En USB, la ZED est une webcam UVC qui renvoie les deux images
+côte à côte ; le SDK ZED n'est pas nécessaire.
+
+```bash
+./build/test_zed_camera                  # /dev/video0, 1280x720
+./build/test_zed_camera --device 2 --res 1080 --right
+./build/test_zed_camera --no-aruco       # sans détection ArUco
+```
+
+La détection ArUco (dictionnaire `DICT_4X4_100`) s'active ou se désactive avec `ENABLE_ARUCO_CHECK` en
+haut du fichier, les options `--aruco` / `--no-aruco`, ou la touche `a` pendant l'exécution. Chaque
+marqueur détecté est signalé dans le terminal (`>>> Marqueur ArUco DÉTECTÉ : id N`) et entouré à l'écran.
+
+L'image est affichée via GStreamer (OpenCV est compilé sans GTK, `cv::imshow` n'est pas disponible) ;
+les touches se tapent donc **dans le terminal** : `a` ArUco on/off, `s` capture, `q` ou Ctrl+C pour
+quitter. `--no-display` lance le test sans fenêtre.
+
 ## État du projet : ce qui est incomplet
 
 Ce code est une base de travail, **pas une version prête pour un match**.

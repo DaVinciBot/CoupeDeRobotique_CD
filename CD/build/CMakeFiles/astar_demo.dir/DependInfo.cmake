@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/maxve/remote_compute_v2/remote_compute/examples/astar_demo.cpp" "CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o" "gcc" "CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/CD/examples/astar_demo.cpp" "CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o" "gcc" "CMakeFiles/astar_demo.dir/examples/astar_demo.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o.d"
-  "/home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o.d"
-  "/home/maxve/remote_compute_v2/remote_compute/tests/test_protocol.cpp" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/game/MatchState.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/CD/src/net/WifiLink.cpp" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/src/net/WifiLink.cpp.o.d"
+  "/home/maxve/remote_compute_v2/remote_compute/CD/tests/test_protocol.cpp" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o" "gcc" "CMakeFiles/test_protocol.dir/tests/test_protocol.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

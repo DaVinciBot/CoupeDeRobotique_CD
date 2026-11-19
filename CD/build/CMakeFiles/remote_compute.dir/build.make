@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute
+CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute/CD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/build
+CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/CD/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/remote_compute.dir/depend.make
@@ -70,74 +70,74 @@ include CMakeFiles/remote_compute.dir/progress.make
 include CMakeFiles/remote_compute.dir/flags.make
 
 CMakeFiles/remote_compute.dir/src/main.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/main.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/main.cpp
+CMakeFiles/remote_compute.dir/src/main.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp
 CMakeFiles/remote_compute.dir/src/main.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/remote_compute.dir/src/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/main.cpp.o -MF CMakeFiles/remote_compute.dir/src/main.cpp.o.d -o CMakeFiles/remote_compute.dir/src/main.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/remote_compute.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/main.cpp.o -MF CMakeFiles/remote_compute.dir/src/main.cpp.o.d -o CMakeFiles/remote_compute.dir/src/main.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp
 
 CMakeFiles/remote_compute.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/main.cpp > CMakeFiles/remote_compute.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp > CMakeFiles/remote_compute.dir/src/main.cpp.i
 
 CMakeFiles/remote_compute.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/main.cpp -o CMakeFiles/remote_compute.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/main.cpp -o CMakeFiles/remote_compute.dir/src/main.cpp.s
 
 CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp
+CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp
 CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -MF CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o.d -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -MF CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o.d -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp
 
 CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp > CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp > CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.i
 
 CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/camera/CSICamera.cpp -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/camera/CSICamera.cpp -o CMakeFiles/remote_compute.dir/src/camera/CSICamera.cpp.s
 
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp
+CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o -MF CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o.d -o CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o -MF CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o.d -o CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp
 
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp > CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp > CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.i
 
 CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp -o CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp -o CMakeFiles/remote_compute.dir/src/detector/ArucoDetector.cpp.s
 
 CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp
+CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp
 CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o -MF CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o.d -o CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o -MF CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o.d -o CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp
 
 CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp > CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp > CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.i
 
 CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/game/MatchState.cpp -o CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/game/MatchState.cpp -o CMakeFiles/remote_compute.dir/src/game/MatchState.cpp.s
 
 CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o: CMakeFiles/remote_compute.dir/flags.make
-CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp
+CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/net/WifiLink.cpp
 CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o: CMakeFiles/remote_compute.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o -MF CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o.d -o CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o -MF CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o.d -o CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/net/WifiLink.cpp
 
 CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp > CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/net/WifiLink.cpp > CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.i
 
 CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/net/WifiLink.cpp -o CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/net/WifiLink.cpp -o CMakeFiles/remote_compute.dir/src/net/WifiLink.cpp.s
 
 # Object files for target remote_compute
 remote_compute_OBJECTS = \
@@ -172,7 +172,7 @@ remote_compute: /usr/local/lib/libopencv_flann.so.4.10.0
 remote_compute: /usr/local/lib/libopencv_imgproc.so.4.10.0
 remote_compute: /usr/local/lib/libopencv_core.so.4.10.0
 remote_compute: CMakeFiles/remote_compute.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable remote_compute"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable remote_compute"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/remote_compute.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -184,6 +184,6 @@ CMakeFiles/remote_compute.dir/clean:
 .PHONY : CMakeFiles/remote_compute.dir/clean
 
 CMakeFiles/remote_compute.dir/depend:
-	cd /home/maxve/remote_compute_v2/remote_compute/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maxve/remote_compute_v2/remote_compute /home/maxve/remote_compute_v2/remote_compute /home/maxve/remote_compute_v2/remote_compute/build /home/maxve/remote_compute_v2/remote_compute/build /home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/remote_compute.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/maxve/remote_compute_v2/remote_compute/CD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maxve/remote_compute_v2/remote_compute/CD /home/maxve/remote_compute_v2/remote_compute/CD /home/maxve/remote_compute_v2/remote_compute/CD/build /home/maxve/remote_compute_v2/remote_compute/CD/build /home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles/remote_compute.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/remote_compute.dir/depend
 

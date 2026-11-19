@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute
+CMAKE_SOURCE_DIR = /home/maxve/remote_compute_v2/remote_compute/CD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/build
+CMAKE_BINARY_DIR = /home/maxve/remote_compute_v2/remote_compute/CD/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test_detector.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/test_detector.dir/progress.make
 include CMakeFiles/test_detector.dir/flags.make
 
 CMakeFiles/test_detector.dir/tests/test_detector.cpp.o: CMakeFiles/test_detector.dir/flags.make
-CMakeFiles/test_detector.dir/tests/test_detector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp
+CMakeFiles/test_detector.dir/tests/test_detector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/tests/test_detector.cpp
 CMakeFiles/test_detector.dir/tests/test_detector.cpp.o: CMakeFiles/test_detector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_detector.dir/tests/test_detector.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_detector.dir/tests/test_detector.cpp.o -MF CMakeFiles/test_detector.dir/tests/test_detector.cpp.o.d -o CMakeFiles/test_detector.dir/tests/test_detector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_detector.dir/tests/test_detector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_detector.dir/tests/test_detector.cpp.o -MF CMakeFiles/test_detector.dir/tests/test_detector.cpp.o.d -o CMakeFiles/test_detector.dir/tests/test_detector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/tests/test_detector.cpp
 
 CMakeFiles/test_detector.dir/tests/test_detector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_detector.dir/tests/test_detector.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp > CMakeFiles/test_detector.dir/tests/test_detector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/tests/test_detector.cpp > CMakeFiles/test_detector.dir/tests/test_detector.cpp.i
 
 CMakeFiles/test_detector.dir/tests/test_detector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_detector.dir/tests/test_detector.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/tests/test_detector.cpp -o CMakeFiles/test_detector.dir/tests/test_detector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/tests/test_detector.cpp -o CMakeFiles/test_detector.dir/tests/test_detector.cpp.s
 
 CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o: CMakeFiles/test_detector.dir/flags.make
-CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp
+CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o: /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp
 CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o: CMakeFiles/test_detector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o -MF CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o.d -o CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o -MF CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o.d -o CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.o -c /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp
 
 CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp > CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp > CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.i
 
 CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/src/detector/ArucoDetector.cpp -o CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxve/remote_compute_v2/remote_compute/CD/src/detector/ArucoDetector.cpp -o CMakeFiles/test_detector.dir/src/detector/ArucoDetector.cpp.s
 
 # Object files for target test_detector
 test_detector_OBJECTS = \
@@ -124,7 +124,7 @@ test_detector: /usr/local/lib/libopencv_flann.so.4.10.0
 test_detector: /usr/local/lib/libopencv_imgproc.so.4.10.0
 test_detector: /usr/local/lib/libopencv_core.so.4.10.0
 test_detector: CMakeFiles/test_detector.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_detector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_detector"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_detector.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +136,6 @@ CMakeFiles/test_detector.dir/clean:
 .PHONY : CMakeFiles/test_detector.dir/clean
 
 CMakeFiles/test_detector.dir/depend:
-	cd /home/maxve/remote_compute_v2/remote_compute/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maxve/remote_compute_v2/remote_compute /home/maxve/remote_compute_v2/remote_compute /home/maxve/remote_compute_v2/remote_compute/build /home/maxve/remote_compute_v2/remote_compute/build /home/maxve/remote_compute_v2/remote_compute/build/CMakeFiles/test_detector.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/maxve/remote_compute_v2/remote_compute/CD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maxve/remote_compute_v2/remote_compute/CD /home/maxve/remote_compute_v2/remote_compute/CD /home/maxve/remote_compute_v2/remote_compute/CD/build /home/maxve/remote_compute_v2/remote_compute/CD/build /home/maxve/remote_compute_v2/remote_compute/CD/build/CMakeFiles/test_detector.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/test_detector.dir/depend
 
